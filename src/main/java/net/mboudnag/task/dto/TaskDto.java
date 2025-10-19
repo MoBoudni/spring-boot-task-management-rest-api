@@ -27,7 +27,6 @@ public class TaskDto {
      * Die eindeutige ID der Aufgabe.
 
      * Wird von der Datenbank automatisch generiert.
-     *
      */
     private Long id;
 
