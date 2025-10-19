@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Bean;
  *   {@code @Configuration} - Kennzeichnet die Klasse als Konfigurationsquelle
  *   {@code @EnableAutoConfiguration} - Aktiviert die automatische Spring-Konfiguration
  *   {@code @ComponentScan} - Scannt das Package nach Spring-Komponenten
- *
+ 
  * @author Mboudnag
  * @version 2.0
  */
@@ -36,7 +36,7 @@ public class TaskManagementApplication {
 
      *   Task (Entity) → TaskDto (DTO)
      *   TaskDto (DTO) → Task (Entity)
-     *
+     
      * @return eine neue ModelMapper-Instanz, die von Spring verwaltet wird.
      */
     @Bean
