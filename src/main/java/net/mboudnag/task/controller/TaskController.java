@@ -12,11 +12,19 @@ import java.util.List;
 
 /**
  * REST-Controller für die Verwaltung von Aufgaben.
+<<<<<<< HEAD
  *
  * Dieser Controller stellt REST-Endpunkte für CRUD-Operationen
  * (Create, Read, Update, Delete) sowie für die Statusverwaltung
  * von Aufgaben bereit.
  *
+=======
+ * 
+ * Dieser Controller stellt REST-Endpunkte für CRUD-Operationen
+ * (Create, Read, Update, Delete) sowie für die Statusverwaltung
+ * von Aufgaben bereit.
+ * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
  * @author Mboudnag
  * @version 2.0
  */
@@ -30,10 +38,17 @@ public class TaskController {
 
     /**
      * Erstellt eine neue Aufgabe.
+<<<<<<< HEAD
      *
      * Dieser Endpunkt nimmt eine Aufgabe im JSON-Format entgegen
      * und speichert sie in der Datenbank.
      *
+=======
+     * 
+     * Dieser Endpunkt nimmt eine Aufgabe im JSON-Format entgegen
+     * und speichert sie in der Datenbank.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param taskDto die zu erstellende Aufgabe als Data Transfer Object
      * @return ResponseEntity mit der gespeicherten Aufgabe und HTTP-Status 201 (CREATED)
      */
@@ -69,18 +84,30 @@ public class TaskController {
 
     /**
      * Aktualisiert eine bestehende Aufgabe.
+<<<<<<< HEAD
      *
      * Alle Felder der Aufgabe (Titel, Beschreibung, Status) werden
      * mit den neuen Werten überschrieben.
      *
+=======
+     * 
+     * Alle Felder der Aufgabe (Titel, Beschreibung, Status) werden
+     * mit den neuen Werten überschrieben.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param taskDto die aktualisierten Aufgabendaten
      * @param taskId  die ID der zu aktualisierenden Aufgabe
      * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
      */
     @PutMapping("{id}")
+<<<<<<< HEAD
     public ResponseEntity<TaskDto> updateTask(@RequestBody TaskDto taskDto,
                                               @PathVariable("id") Long taskId) {
+=======
+    public ResponseEntity<TaskDto> updateTask(@RequestBody TaskDto taskDto, 
+                                               @PathVariable("id") Long taskId) {
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
         TaskDto updatedTask = taskService.updateTask(taskDto, taskId);
         return ResponseEntity.ok(updatedTask);
     }
@@ -100,9 +127,15 @@ public class TaskController {
 
     /**
      * Markiert eine Aufgabe als abgeschlossen.
+<<<<<<< HEAD
      *
      * Setzt das completed-Flag der Aufgabe auf true.
      *
+=======
+     * 
+     * Setzt das completed-Flag der Aufgabe auf true.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param taskId die ID der Aufgabe, die als abgeschlossen markiert werden soll
      * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
@@ -115,9 +148,15 @@ public class TaskController {
 
     /**
      * Markiert eine Aufgabe als nicht abgeschlossen.
+<<<<<<< HEAD
      *
      * Setzt das completed-Flag der Aufgabe auf false.
      *
+=======
+     * 
+     * Setzt das completed-Flag der Aufgabe auf false.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param taskId die ID der Aufgabe, die als nicht abgeschlossen markiert werden soll
      * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert

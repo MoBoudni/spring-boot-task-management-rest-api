@@ -14,15 +14,26 @@ import java.util.stream.Collectors;
 
 /**
  * Implementierung des TaskService-Interfaces.
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
  * Diese Klasse enthält die gesamte Geschäftslogik für die Verwaltung
  * von Aufgaben. Sie fungiert als Vermittler zwischen dem Controller
  * und dem Repository und übernimmt die Konvertierung zwischen
  * Entity- und DTO-Objekten.
+<<<<<<< HEAD
  *
  * Die {@code @Service}-Annotation markiert diese Klasse als Spring-Bean
  * und ermöglicht die automatische Dependency Injection.
  *
+=======
+ * 
+ * Die {@code @Service}-Annotation markiert diese Klasse als Spring-Bean
+ * und ermöglicht die automatische Dependency Injection.
+ * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
  * @author Mboudnag
  * @version 2.0
  */
@@ -35,10 +46,17 @@ public class TaskServiceImpl implements TaskService {
 
     /**
      * Erstellt eine neue Aufgabe in der Datenbank.
+<<<<<<< HEAD
      *
      * Konvertiert das empfangene DTO in eine Entity, speichert diese
      * und gibt die gespeicherte Aufgabe wieder als DTO zurück.
      *
+=======
+     * 
+     * Konvertiert das empfangene DTO in eine Entity, speichert diese
+     * und gibt die gespeicherte Aufgabe wieder als DTO zurück.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param taskDto die zu erstellende Aufgabe als DTO
      * @return die gespeicherte Aufgabe mit generierter ID als DTO
      */
@@ -51,8 +69,14 @@ public class TaskServiceImpl implements TaskService {
         Task savedTask = taskRepository.save(task);
 
         // Gespeicherte Entity zurück in DTO konvertieren
+<<<<<<< HEAD
 
         return modelMapper.map(savedTask, TaskDto.class);
+=======
+        TaskDto savedTaskDto = modelMapper.map(savedTask, TaskDto.class);
+
+        return savedTaskDto;
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
     }
 
     /**
@@ -72,10 +96,17 @@ public class TaskServiceImpl implements TaskService {
 
     /**
      * Ruft alle vorhandenen Aufgaben aus der Datenbank ab.
+<<<<<<< HEAD
      *
      * Konvertiert alle gefundenen Entities in DTOs mithilfe
      * von Java Streams für eine effiziente Verarbeitung.
      *
+=======
+     * 
+     * Konvertiert alle gefundenen Entities in DTOs mithilfe
+     * von Java Streams für eine effiziente Verarbeitung.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      *
      * @return eine Liste aller Aufgaben als DTOs
      */
@@ -90,10 +121,17 @@ public class TaskServiceImpl implements TaskService {
 
     /**
      * Aktualisiert eine bestehende Aufgabe mit neuen Daten.
+<<<<<<< HEAD
      *
      * Sucht die Aufgabe, aktualisiert ihre Felder (Titel, Beschreibung, Status)
      * und speichert die Änderungen in der Datenbank.
      *
+=======
+     * 
+     * Sucht die Aufgabe, aktualisiert ihre Felder (Titel, Beschreibung, Status)
+     * und speichert die Änderungen in der Datenbank.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param taskDto die aktualisierten Aufgabendaten
      * @param id      die ID der zu aktualisierenden Aufgabe
      * @return die aktualisierte Aufgabe als DTO
@@ -117,9 +155,15 @@ public class TaskServiceImpl implements TaskService {
 
     /**
      * Löscht eine Aufgabe aus der Datenbank.
+<<<<<<< HEAD
      *
      * Prüft zunächst, ob die Aufgabe existiert, bevor sie gelöscht wird.
      *
+=======
+     * 
+     * Prüft zunächst, ob die Aufgabe existiert, bevor sie gelöscht wird.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param id die ID der zu löschenden Aufgabe
      * @throws ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
      */
@@ -133,9 +177,15 @@ public class TaskServiceImpl implements TaskService {
 
     /**
      * Markiert eine Aufgabe als abgeschlossen.
+<<<<<<< HEAD
      *
      * Setzt das completed-Flag auf true und speichert die Änderung.
      *
+=======
+     * 
+     * Setzt das completed-Flag auf true und speichert die Änderung.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param id die ID der Aufgabe
      * @return die aktualisierte Aufgabe mit completed=true als DTO
      * @throws ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
@@ -154,9 +204,15 @@ public class TaskServiceImpl implements TaskService {
 
     /**
      * Markiert eine Aufgabe als nicht abgeschlossen.
+<<<<<<< HEAD
      *
      * Setzt das completed-Flag auf false und speichert die Änderung.
      *
+=======
+     * 
+     * Setzt das completed-Flag auf false und speichert die Änderung.
+     * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
      * @param id die ID der Aufgabe
      * @return die aktualisierte Aufgabe mit completed=false als DTO
      * @throws ResourceNotFoundException wenn keine Aufgabe mit der ID existiert

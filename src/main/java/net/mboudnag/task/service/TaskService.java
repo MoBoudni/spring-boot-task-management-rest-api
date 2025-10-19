@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Service-Interface für die Geschäftslogik der Aufgabenverwaltung.
+<<<<<<< HEAD
  *
  * Dieses Interface definiert alle Service-Methoden für die Verwaltung
  * von Aufgaben. Es bildet die Geschäftslogikschicht zwischen dem
@@ -13,6 +14,15 @@ import java.util.List;
  *
  * Die Implementierung erfolgt in {@link net.mboudnag.task.service.impl.TaskServiceImpl}.
  *
+=======
+ * 
+ * Dieses Interface definiert alle Service-Methoden für die Verwaltung
+ * von Aufgaben. Es bildet die Geschäftslogikschicht zwischen dem
+ * Controller und dem Repository.
+ * 
+ * Die Implementierung erfolgt in {@link net.mboudnag.task.service.impl.TaskServiceImpl}.
+ * 
+>>>>>>> 7998a7dae4e14e974d2f365958a670588b69874f
  * @author Mboudnag
  * @version 2.0
  */
