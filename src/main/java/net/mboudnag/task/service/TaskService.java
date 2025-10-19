@@ -14,7 +14,7 @@ import java.util.List;
  * Die Implementierung erfolgt in {@link net.mboudnag.task.service.impl.TaskServiceImpl}.
  * 
  * @author Mboudnag
- * @version 1.0
+ * @version 2.0
  */
 public interface TaskService {
 
