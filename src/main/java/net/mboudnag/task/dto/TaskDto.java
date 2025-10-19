@@ -13,7 +13,7 @@ import lombok.Setter;
  * und verhindert die direkte Exponierung der Entity-Klasse.
 
  * Lombok-Annotationen generieren automatisch Getter, Setter sowie Konstruktoren.
- *
+ 
  * @author Mboudnag
  * @version 2.0
  */
@@ -47,7 +47,7 @@ public class TaskDto {
     /**
      * Der Status der Aufgabe.
 
-     * true = Aufgabe ist abgeschlossen<br>
+     * true = Aufgabe ist abgeschlossen
      * false = Aufgabe ist noch offen (Standardwert)
      */
     private boolean completed;
