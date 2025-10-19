@@ -7,11 +7,11 @@ import lombok.Setter;
 
 /**
  * Data Transfer Object (DTO) für Aufgaben.
- *
+
  * Dieses DTO wird für die Kommunikation zwischen dem Client und dem Server verwendet.
  * Es dient als Zwischenschicht zwischen der Präsentations- und der Persistenzschicht
  * und verhindert die direkte Exponierung der Entity-Klasse.
- *
+
  * Lombok-Annotationen generieren automatisch Getter, Setter sowie Konstruktoren.
  *
  * @author Mboudnag
@@ -25,7 +25,7 @@ public class TaskDto {
 
     /**
      * Die eindeutige ID der Aufgabe.
-     *
+
      * Wird von der Datenbank automatisch generiert.
      *
      */
@@ -33,21 +33,21 @@ public class TaskDto {
 
     /**
      * Der Titel der Aufgabe.
-     *
+
      * Pflichtfeld: Darf nicht null sein.
      */
     private String title;
 
     /**
      * Die detaillierte Beschreibung der Aufgabe.
-     *
+
      * Pflichtfeld: Darf nicht null sein.
      */
     private String description;
 
     /**
      * Der Status der Aufgabe.
-     *
+
      * true = Aufgabe ist abgeschlossen<br>
      * false = Aufgabe ist noch offen (Standardwert)
      */

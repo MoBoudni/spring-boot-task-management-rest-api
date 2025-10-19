@@ -4,40 +4,55 @@ import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-// Dieser Codeblock ist die Hülle und der Starter der Anwendung
-// Zweck: Startet die Spring Boot-Anwendung und definiert eine Utility-Bean.
 
-@SpringBootApplication  // kombiniert @Configuration, @EnableAutoConfiguration und @ComponentScan
-                        // initialisiert die gesamte Spring Boot-Anwendung, aktiviert die automatische
-                        // Konfiguration und scannt Komponenten
+/**
+ * Hauptklasse der Task-Management-Anwendung.
+
+ * Diese Klasse dient als Einstiegspunkt für die Spring Boot-Anwendung
+ * und konfiguriert grundlegende Beans, die in der gesamten Anwendung
+ * verwendet werden.
+
+ * Die {@code @SpringBootApplication}-Annotation kombiniert drei wichtige Annotationen:
+
+ *   {@code @Configuration} - Kennzeichnet die Klasse als Konfigurationsquelle
+ *   {@code @EnableAutoConfiguration} - Aktiviert die automatische Spring-Konfiguration
+ *   {@code @ComponentScan} - Scannt das Package nach Spring-Komponenten
+ *
+ * @author Mboudnag
+ * @version 2.0
+ */
+@SpringBootApplication
 public class TaskManagementApplication {
 
+    /**
+     * Erstellt eine ModelMapper-Bean für die gesamte Anwendung.
+
+     * Der ModelMapper wird verwendet, um Objekte zwischen verschiedenen
+     * Schichten zu konvertieren, insbesondere zwischen Entity- und DTO-Objekten.
+     * Dies vermeidet repetitiven Code für die Objektumwandlung und sorgt für
+     * eine saubere Trennung der Schichten.
+
+     * Anwendungsbeispiele:
+
+     *   Task (Entity) → TaskDto (DTO)
+     *   TaskDto (DTO) → Task (Entity)
+     *
+     * @return eine neue ModelMapper-Instanz, die von Spring verwaltet wird.
+     */
     @Bean
-    public ModelMapper modelMapper() {  // modelMapper(): Definiert eine Bean vom Typ ModelMapper, die üblicherweise
-        // zur Umwandlung von Datenübertragungsobjekten (DTOs) in Entitäten und umgekehrt verwendet wird.
+    public ModelMapper modelMapper() {
         return new ModelMapper();
     }
 
+    /**
+     * Haupteinstiegspunkt der Anwendung.
+
+     * Diese Methode startet die Spring Boot-Anwendung, initialisiert den
+     * Application Context und startet den eingebetteten Tomcat-Webserver.
+
+     * @param args Kommandozeilenargumente, die beim Start übergeben werden können
+     */
     public static void main(String[] args) {
         SpringApplication.run(TaskManagementApplication.class, args);
     }
-                              //SpringApplication.run(): startet den eingebetteten Webserver und initialisiert
-                              // den Application Context.
-
 }
-
-// Dieser Codeblock ist eine spezifische Konfiguration (eine "Erweiterung" oder "Einstellung"),
-// die innerhalb dieser Hülle definiert wird, um ein bestimmtes Sicherheitsproblem (CORS) zu lösen.:
-
-//	@Bean
-//	public WebMvcConfigurer corsConfigurer() {
-//		return new WebMvcConfigurer() {
-//			@Override
-//			public void addCorsMappings(CorsRegistry registry) {
-//				registry.addMapping("/api/**")
-//						.allowedMethods("*")
-//						.allowedOrigins("http://localhost:3000");
-//			}
-//		};
-//	}
-
