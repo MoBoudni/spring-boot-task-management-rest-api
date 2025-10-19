@@ -16,7 +16,7 @@ import java.util.List;
  * Dieser Controller stellt REST-Endpunkte für CRUD-Operationen
  * (Create, Read, Update, Delete) sowie für die Statusverwaltung
  * von Aufgaben bereit.
- *
+ 
  * @author Mboudnag
  * @version 2.0
  */
@@ -33,7 +33,7 @@ public class TaskController {
 
      * Dieser Endpunkt nimmt eine Aufgabe im JSON-Format entgegen
      * und speichert sie in der Datenbank.
-     *
+     
      * @param taskDto die zu erstellende Aufgabe als Data Transfer Object
      * @return ResponseEntity mit der gespeicherten Aufgabe und HTTP-Status 201 (CREATED)
      */
@@ -45,7 +45,7 @@ public class TaskController {
 
     /**
      * Ruft eine einzelne Aufgabe anhand ihrer ID ab.
-     *
+     
      * @param taskId die eindeutige ID der Aufgabe
      * @return ResponseEntity mit der gefundenen Aufgabe und HTTP-Status 200 (OK)
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
@@ -58,7 +58,7 @@ public class TaskController {
 
     /**
      * Ruft alle vorhandenen Aufgaben ab.
-     *
+     
      * @return ResponseEntity mit einer Liste aller Aufgaben und HTTP-Status 200 (OK)
      */
     @GetMapping
@@ -72,7 +72,7 @@ public class TaskController {
 
      * Alle Felder der Aufgabe (Titel, Beschreibung, Status) werden
      * mit den neuen Werten überschrieben.
-     *
+     
      * @param taskDto die aktualisierten Aufgabendaten
      * @param taskId  die ID der zu aktualisierenden Aufgabe
      * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
@@ -87,7 +87,7 @@ public class TaskController {
 
     /**
      * Löscht eine Aufgabe anhand ihrer ID.
-     *
+     
      * @param taskId die ID der zu löschenden Aufgabe
      * @return ResponseEntity mit Erfolgsmeldung und HTTP-Status 200 (OK)
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
@@ -102,7 +102,7 @@ public class TaskController {
      * Markiert eine Aufgabe als abgeschlossen.
 
      * Setzt das completed-Flag der Aufgabe auf true.
-     *
+     
      * @param taskId die ID der Aufgabe, die als abgeschlossen markiert werden soll
      * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
@@ -117,7 +117,7 @@ public class TaskController {
      * Markiert eine Aufgabe als nicht abgeschlossen.
 
      * Setzt das completed-Flag der Aufgabe auf false.
-     *
+     
      * @param taskId die ID der Aufgabe, die als nicht abgeschlossen markiert werden soll
      * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
