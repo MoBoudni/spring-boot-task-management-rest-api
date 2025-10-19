@@ -14,7 +14,7 @@ import lombok.Setter;
  * Attribute einer Aufgabe.
 
  * Lombok-Annotationen generieren automatisch Getter, Setter sowie Konstruktoren.
- *
+ 
  * @author Mboudnag
  * @version 2.0
  */
@@ -39,7 +39,6 @@ public class Task {
      * Der Titel der Aufgabe.
 
      * Pflichtfeld auf Datenbankebene (NOT NULL Constraint).
-     *
      */
     @Column(nullable = false)
     private String title;
