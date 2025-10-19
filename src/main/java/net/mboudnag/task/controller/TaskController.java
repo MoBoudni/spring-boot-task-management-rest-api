@@ -1,3 +1,4 @@
+
 package net.mboudnag.task.controller;
 
 import lombok.AllArgsConstructor;
@@ -9,6 +10,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST-Controller für die Verwaltung von Aufgaben.
+ *
+ * Dieser Controller stellt REST-Endpunkte für CRUD-Operationen
+ * (Create, Read, Update, Delete) sowie für die Statusverwaltung
+ * von Aufgaben bereit.
+ *
+ * @author Mboudnag
+ * @version 2.0
+ */
 @CrossOrigin("*")
 @RestController
 @RequestMapping("api/tasks")
@@ -17,68 +28,103 @@ public class TaskController {
 
     private TaskService taskService;
 
-    // Build Add task REST API
-
+    /**
+     * Erstellt eine neue Aufgabe.
+     *
+     * Dieser Endpunkt nimmt eine Aufgabe im JSON-Format entgegen
+     * und speichert sie in der Datenbank.
+     *
+     * @param taskDto die zu erstellende Aufgabe als Data Transfer Object
+     * @return ResponseEntity mit der gespeicherten Aufgabe und HTTP-Status 201 (CREATED)
+     */
     @PostMapping
-    public ResponseEntity<TaskDto> addTask(@RequestBody TaskDto taskDto){
-
+    public ResponseEntity<TaskDto> addTask(@RequestBody TaskDto taskDto) {
         TaskDto savedTask = taskService.addTask(taskDto);
-
         return new ResponseEntity<>(savedTask, HttpStatus.CREATED);
     }
 
-    // Build Get task REST API
+    /**
+     * Ruft eine einzelne Aufgabe anhand ihrer ID ab.
+     *
+     * @param taskId die eindeutige ID der Aufgabe
+     * @return ResponseEntity mit der gefundenen Aufgabe und HTTP-Status 200 (OK)
+     * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
+     */
     @GetMapping("{id}")
-    public ResponseEntity<TaskDto> getTask
-(@PathVariable("id") Long taskId){
+    public ResponseEntity<TaskDto> getTask(@PathVariable("id") Long taskId) {
         TaskDto taskDto = taskService.getTask(taskId);
         return new ResponseEntity<>(taskDto, HttpStatus.OK);
     }
 
-    // Build Get All tasks REST API
+    /**
+     * Ruft alle vorhandenen Aufgaben ab.
+     *
+     * @return ResponseEntity mit einer Liste aller Aufgaben und HTTP-Status 200 (OK)
+     */
     @GetMapping
-    public ResponseEntity<List<TaskDto>> getAllTasks(){
+    public ResponseEntity<List<TaskDto>> getAllTasks() {
         List<TaskDto> tasks = taskService.getAllTasks();
-        //return new ResponseEntity<>(tasks, HttpStatus.OK);
         return ResponseEntity.ok(tasks);
     }
 
-    // Build Update task REST API
+    /**
+     * Aktualisiert eine bestehende Aufgabe.
+     *
+     * Alle Felder der Aufgabe (Titel, Beschreibung, Status) werden
+     * mit den neuen Werten überschrieben.
+     *
+     * @param taskDto die aktualisierten Aufgabendaten
+     * @param taskId  die ID der zu aktualisierenden Aufgabe
+     * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
+     * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
+     */
     @PutMapping("{id}")
-    public ResponseEntity<TaskDto> updateTask(@RequestBody TaskDto taskDto, @PathVariable("id") Long taskId){
-        TaskDto updatedTask
-
- = taskService.updateTask(taskDto, taskId);
-        return ResponseEntity.ok(updatedTask
-
-);
+    public ResponseEntity<TaskDto> updateTask(@RequestBody TaskDto taskDto,
+                                              @PathVariable("id") Long taskId) {
+        TaskDto updatedTask = taskService.updateTask(taskDto, taskId);
+        return ResponseEntity.ok(updatedTask);
     }
 
-    // Build Delete task REST API
+    /**
+     * Löscht eine Aufgabe anhand ihrer ID.
+     *
+     * @param taskId die ID der zu löschenden Aufgabe
+     * @return ResponseEntity mit Erfolgsmeldung und HTTP-Status 200 (OK)
+     * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
+     */
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteTask(@PathVariable("id") Long taskId){
+    public ResponseEntity<String> deleteTask(@PathVariable("id") Long taskId) {
         taskService.deleteTask(taskId);
         return ResponseEntity.ok("task deleted successfully!.");
     }
 
-    // Build Complete task REST API
+    /**
+     * Markiert eine Aufgabe als abgeschlossen.
+     *
+     * Setzt das completed-Flag der Aufgabe auf true.
+     *
+     * @param taskId die ID der Aufgabe, die als abgeschlossen markiert werden soll
+     * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
+     * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
+     */
     @PatchMapping("{id}/complete")
-    public ResponseEntity<TaskDto> completeTask(@PathVariable("id") Long taskId){
-        TaskDto updatedTask
-
- = taskService.completeTask(taskId);
-        return ResponseEntity.ok(updatedTask
-
-);
-    }
-
-    // Build In Complete task REST API
-    @PatchMapping("{id}/in-complete")
-    public ResponseEntity<TaskDto> inCompleteTask(@PathVariable("id") Long taskId){
-        TaskDto updatedTask
-
- = taskService.inCompleteTask(taskId);
+    public ResponseEntity<TaskDto> completeTask(@PathVariable("id") Long taskId) {
+        TaskDto updatedTask = taskService.completeTask(taskId);
         return ResponseEntity.ok(updatedTask);
     }
 
+    /**
+     * Markiert eine Aufgabe als nicht abgeschlossen.
+     *
+     * Setzt das completed-Flag der Aufgabe auf false.
+     *
+     * @param taskId die ID der Aufgabe, die als nicht abgeschlossen markiert werden soll
+     * @return ResponseEntity mit der aktualisierten Aufgabe und HTTP-Status 200 (OK)
+     * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
+     */
+    @PatchMapping("{id}/in-complete")
+    public ResponseEntity<TaskDto> inCompleteTask(@PathVariable("id") Long taskId) {
+        TaskDto updatedTask = taskService.inCompleteTask(taskId);
+        return ResponseEntity.ok(updatedTask);
+    }
 }
