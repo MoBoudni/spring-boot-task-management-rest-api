@@ -20,7 +20,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *   findAll() - Gibt alle Aufgaben zurück
  *   deleteById(Long) - Löscht eine Aufgabe anhand ihrer ID
  *   und viele weitere...
- *
+ 
  * @author Mboudnag
  * @version 2.0
  */
