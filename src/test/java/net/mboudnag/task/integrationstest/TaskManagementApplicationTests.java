@@ -1,4 +1,4 @@
-package net.mboudnag.task;
+package net.mboudnag.task.integrationstest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
