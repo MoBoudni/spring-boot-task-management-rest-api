@@ -14,13 +14,13 @@ import java.util.List;
  * Die Implementierung erfolgt in {@link net.mboudnag.task.service.impl.TaskServiceImpl}.
 
  * @author Mboudnag
- * @version 1.0
+ * @version 2.0
  */
 public interface TaskService {
 
     /**
      * Erstellt eine neue Aufgabe.
-     *
+     
      * @param taskDto die zu erstellende Aufgabe als DTO
      * @return die gespeicherte Aufgabe mit generierter ID
      */
@@ -28,7 +28,7 @@ public interface TaskService {
 
     /**
      * Ruft eine einzelne Aufgabe anhand ihrer ID ab.
-     *
+     
      * @param id die eindeutige ID der Aufgabe
      * @return die gefundene Aufgabe als DTO
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
@@ -37,14 +37,14 @@ public interface TaskService {
 
     /**
      * Ruft alle vorhandenen Aufgaben ab.
-     *
+     
      * @return eine Liste aller Aufgaben
      */
     List<TaskDto> getAllTasks();
 
     /**
      * Aktualisiert eine bestehende Aufgabe.
-     *
+     
      * @param taskDto die aktualisierten Aufgabendaten
      * @param id      die ID der zu aktualisierenden Aufgabe
      * @return die aktualisierte Aufgabe als DTO
@@ -54,7 +54,7 @@ public interface TaskService {
 
     /**
      * Löscht eine Aufgabe anhand ihrer ID.
-     *
+     
      * @param id die ID der zu löschenden Aufgabe
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
      */
@@ -62,7 +62,7 @@ public interface TaskService {
 
     /**
      * Markiert eine Aufgabe als abgeschlossen.
-     *
+     
      * @param id die ID der Aufgabe
      * @return die aktualisierte Aufgabe mit completed=true
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert
@@ -71,7 +71,7 @@ public interface TaskService {
 
     /**
      * Markiert eine Aufgabe als nicht abgeschlossen.
-     *
+     
      * @param id die ID der Aufgabe
      * @return die aktualisierte Aufgabe mit completed=false
      * @throws net.mboudnag.task.exception.ResourceNotFoundException wenn keine Aufgabe mit der ID existiert

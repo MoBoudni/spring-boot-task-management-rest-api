@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * Die {@code @ResponseStatus}-Annotation sorgt dafür, dass beim Werfen
  * dieser Exception automatisch ein HTTP-Status 404 (NOT_FOUND) an den
  * Client zurückgegeben wird.
- *
+ 
  * @author Mboudnag
  * @version 2.0
  */
@@ -39,7 +39,7 @@ public class ResourceNotFoundException extends RuntimeException {
      * aussagekräftigen Fehlermeldung.
 
      * @param message die detaillierte Fehlermeldung, die beschreibt,
-     *        welche Ressource nicht gefunden wurde
+     * welche Ressource nicht gefunden wurde
      */
     public ResourceNotFoundException(String message) {
         super(message);

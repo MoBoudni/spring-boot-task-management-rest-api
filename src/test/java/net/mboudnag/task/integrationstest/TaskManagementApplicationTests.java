@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
  * Im Gegensatz zu Unit-Tests, die einzelne Komponenten isoliert testen,
  * prüfen diese Tests das Zusammenspiel aller Komponenten der Anwendung.
- *
+ 
  * @author Mboudnag
  * @version 2.0
  */

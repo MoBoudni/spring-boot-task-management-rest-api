@@ -5,10 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.time.LocalDateTime;
 
 /**
  * JPA-Entity-Klasse für Aufgaben.
@@ -20,7 +16,7 @@ import java.time.LocalDateTime;
  * Lombok-Annotationen generieren automatisch Getter, Setter sowie Konstruktoren.
  *
  * @author Mboudnag
- * @version 3.0
+ * @version 2.0
  */
 @Setter
 @Getter
@@ -43,6 +39,7 @@ public class Task {
      * Der Titel der Aufgabe.
 
      * Pflichtfeld auf Datenbankebene (NOT NULL Constraint).
+     *
      */
     @Column(nullable = false)
     private String title;
@@ -62,24 +59,4 @@ public class Task {
      * false = Aufgabe ist noch offen (Standardwert: false)
      */
     private boolean completed;
-
-    /**
-     * Der Zeitpunkt der Erstellung der Aufgabe.
-
-     * Wird automatisch beim ersten Speichern gesetzt und nicht mehr verändert.
-     * Hibernate setzt diesen Wert automatisch.
-     */
-    @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    /**
-     * Der Zeitpunkt der letzten Aktualisierung der Aufgabe.
-
-     * Wird automatisch bei jeder Änderung aktualisiert.
-     * Hibernate setzt diesen Wert automatisch.
-     */
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 }

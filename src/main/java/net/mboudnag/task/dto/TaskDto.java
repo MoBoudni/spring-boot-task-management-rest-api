@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 /**
  * Data Transfer Object (DTO) für Aufgaben.
 
@@ -29,6 +27,7 @@ public class TaskDto {
      * Die eindeutige ID der Aufgabe.
 
      * Wird von der Datenbank automatisch generiert.
+     *
      */
     private Long id;
 
@@ -53,10 +52,4 @@ public class TaskDto {
      * false = Aufgabe ist noch offen (Standardwert)
      */
     private boolean completed;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
-
 }
